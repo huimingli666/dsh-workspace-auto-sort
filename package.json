@@ -1,0 +1,39 @@
+{
+  "name": "@dsh-plugins/dsh-workspace-auto-sort",
+  "version": "0.1.0",
+  "description": "Keeps the outermost dsh workspace groups ordered by their newest child-session activity: every committed session event refreshes the owning workspace's recency rank and the plugin rewrites the durable registry order through the official insertBefore API (the same path a manual drag uses), so the sidebar reshuffles live and the order survives restarts. Host-only: the GUI already reacts to the workspace-changed broadcast, no browser bundle needed.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": {
+      "default": "./src/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "files": [
+    "src",
+    "cordis.patch.yml",
+    "test",
+    "README.md"
+  ],
+  "engines": {
+    "node": "^22.0.0 || >=24.0.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huimingli666/dsh-workspace-auto-sort.git"
+  },
+  "homepage": "https://github.com/huimingli666/dsh-workspace-auto-sort#readme",
+  "bugs": {
+    "url": "https://github.com/huimingli666/dsh-workspace-auto-sort/issues"
+  },
+  "license": "MIT"
+}

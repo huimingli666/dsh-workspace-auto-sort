@@ -1,0 +1,12 @@
+# dsh-workspace-auto-sort bundle patch: inserts the host-only plugin row into
+# the web profile roster. The plugin's main entry (exports ".") runs in the
+# host process: it watches committed session events and rewrites the durable
+# workspace registry order through the official insertBefore API. There is no
+# browser half — the web GUI already re-renders the workspace list from the
+# host/workspace-changed broadcast that every registry order write emits.
+# Activate with `dsh plugin --profile web add link:<this package>` (which also
+# appends the package to the profile's dsh.profile.bundles list), then restart
+# dsh web.
+- insert:
+    - id: workspace-auto-sort
+      name: '@dsh-plugins/dsh-workspace-auto-sort'
