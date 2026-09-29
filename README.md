@@ -1,5 +1,7 @@
 # dsh-workspace-auto-sort
 
+[![CI](https://github.com/huimingli666/dsh-workspace-auto-sort/actions/workflows/ci.yml/badge.svg)](https://github.com/huimingli666/dsh-workspace-auto-sort/actions/workflows/ci.yml)
+
 为 DSH（DeepSeek Harness）Web / 桌面端新增**工作区自动排序**：会话收到新的用户消息时，
 自动把侧边栏的各个工作区按「子会话最后一条用户消息时间」降序持久化重排——刚被使用的
 工作区上浮到最前，且顺序在重启后保留。
